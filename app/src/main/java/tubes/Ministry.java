@@ -1,69 +1,60 @@
-package TUBES_Stralgo.app.src.main.java.tubes;
+package tubes;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Ministry {
-    public static List<Member> members = new ArrayList<>();
-
+    public static List<tubes.Member> members = new ArrayList<>();
 
     static {
-        Member member1 = new Member("Leon");
-        member1.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(0));
-        member1.addAvailableWeek(WeekList.weekList.get(0));
-        member1.addAvailableWeek(WeekList.weekList.get(1));
-        addMember(member1);
-        
-        // Member member0 = new Member("leon2");
-        // member0.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(0));
-        // member0.addAvailableWeek(WeekList.weekList.get(0));
-        // member0.addAvailableWeek(WeekList.weekList.get(1));
-        // addMember(member0);
+        Member A = new Member("A");
+        A.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(0)); // Gitar
+        A.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(1)); // Bass
+        A.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        A.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        A.addAvailableWeek(WeekList.weekList.get(2)); // Week 3
+        addMember(A);
 
-        Member member2 = new Member("Jordan");
-        member2.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(1));
-        member2.addAvailableWeek(WeekList.weekList.get(1));
-        member2.addAvailableWeek(WeekList.weekList.get(2));
-        addMember(member2);
+        Member B = new Member("B");
+        B.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(2)); // Drum
+        B.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        B.addAvailableWeek(WeekList.weekList.get(2)); // Week 3
+        B.addAvailableWeek(WeekList.weekList.get(3)); // Week 4
+        addMember(B);
 
-        Member member3 = new Member("Josh");
-        member3.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(2));
-        member3.addAvailableWeek(WeekList.weekList.get(2));
-        member3.addAvailableWeek(WeekList.weekList.get(3));
-        addMember(member3);
+        Member C = new Member("C");
+        C.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(3)); // Keyboard
+        C.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        C.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        C.addAvailableWeek(WeekList.weekList.get(3)); // Week 4
+        addMember(C);
 
-        Member member4 = new Member("Marvel");
-        member4.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(3));
-        member4.addAvailableWeek(WeekList.weekList.get(0));
-        member4.addAvailableWeek(WeekList.weekList.get(3));
-        addMember(member4);
+        Member D = new Member("D");
+        D.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(0)); // Gitar
+        D.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        D.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        D.addAvailableWeek(WeekList.weekList.get(3)); // Week 4
+        addMember(D);
 
-        Member member5 = new Member("koji");
-        member5.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(1));
-        member5.addAvailableWeek(WeekList.weekList.get(0));
-        member5.addAvailableWeek(WeekList.weekList.get(3));
-        addMember(member5);
+        Member E = new Member("E");
+        E.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(1)); // Bass
+        E.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        E.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        E.addAvailableWeek(WeekList.weekList.get(3)); // Week 4
+        addMember(E);
 
-        Member member6 = new Member("dipat");
-        member6.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(2));
-        member6.addAvailableWeek(WeekList.weekList.get(0));
-        member6.addAvailableWeek(WeekList.weekList.get(1));
-        addMember(member6);
+        Member F = new Member("F");
+        F.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(2)); // Drum
+        F.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(3)); // Keyboard
+        F.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        F.addAvailableWeek(WeekList.weekList.get(2)); // Week 3
+        addMember(F);
 
-        
-        Member member7 = new Member("peter");
-        member7.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(0));
-        member7.addAvailableWeek(WeekList.weekList.get(2));
-        member7.addAvailableWeek(WeekList.weekList.get(3));
-        addMember(member7);
-
-
-        Member member8 = new Member("rafli");
-        member8.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(3));
-        member8.addAvailableWeek(WeekList.weekList.get(1));
-        member8.addAvailableWeek(WeekList.weekList.get(2));
-        addMember(member8);
-
+        Member G = new Member("G");
+        G.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(0)); // Gitar
+        G.addAvailableWeek(WeekList.weekList.get(2)); // Week 3
+        G.addAvailableWeek(WeekList.weekList.get(3)); // Week 4
+        addMember(G);
     }
 
     public static void addMember(Member newMember) {

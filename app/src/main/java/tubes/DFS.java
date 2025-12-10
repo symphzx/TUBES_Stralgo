@@ -1,70 +1,61 @@
-package TUBES_Stralgo.app.src.main.java.tubes;
+package tubes;
+
+import tubes.utils.utils;
 
 public class DFS {
     private static boolean found;
-    private static String[][] listPelayanan;
+    private static Member[][] listPelayanan;
 
     public DFS() {
         found = false;
-        listPelayanan = new String[WeekList.weekList.size()][InstrumentsList.instrumentsList.size()];
+        listPelayanan = new Member[WeekList.weekList.size()][InstrumentsList.instrumentsList.size()];
     }
 
-    public static void jadwalPelayanan(int minggu) {
-        if (found) {
-            return;
-        }
-
-        if (minggu == WeekList.weekList.size()) {
+    public static void dfs(int minggu, int instrumen) {
+        if(instrumen == InstrumentsList.instrumentsList.size()) {
             found = true;
             return;
         }
-
-        for (int i = 0; i < InstrumentsList.instrumentsList.size(); i++) {
-            boolean bisa = false;
-            String nama = "";
-            for (Member member : Ministry.members) {
-                if (member.getInstrumentSpeciality().contains(InstrumentsList.instrumentsList.get(i)) &&
-                        member.getAvailableWeek().contains(WeekList.weekList.get(minggu))) {
-                    bisa = true;
-                    nama = member.getMemberName();
-                    break;
-                }
-            }
-            if (!bisa) {
-                return;
-            } else {
-                listPelayanan[minggu][i] = nama;
-            }
+        if(minggu == WeekList.weekList.size()) {
+            dfs(0, instrumen + 1);
+            return;
         }
-        jadwalPelayanan(minggu + 1);
+
+        for(Member member : Ministry.members) {
+            if(utils.find(listPelayanan[minggu], member)) {
+                continue;
+            }
+            if(!member.getInstrumentSpeciality().contains(InstrumentsList.instrumentsList.get(instrumen))) {
+                continue;
+            }
+            if(!member.getAvailableWeek().contains(WeekList.weekList.get(minggu))) {
+                continue;
+            }
+
+            listPelayanan[minggu][instrumen] = member;
+            dfs(minggu + 1, instrumen);
+
+            if(found) {
+                return;
+            }
+
+            listPelayanan[minggu][instrumen] = null;
+        }
     }
 
     public static void main(String[] args) {
-        // for(Member member : Ministry.members) {
-        // System.out.println("Member name: " + member.getMemberName() + " (Instrument
-        // Specialty: " + member.getInstrumentSpeciality().get(0).getInstrumentName() +
-        // ")");
-        // System.out.print("Available weeks: ");
-        // for(Week week : member.getAvailableWeek()) {
-        // System.out.print(week.getWeekName() + ", ");
-        // }
-        // System.out.println("\n");
-        // }
-
-        // for (int i = 0; i < WeekList.weekList.size(); i++) {
-        // for (int j = 0; j < InstrumentsList.instrumentsList.size(); j++) {
-        // // listPelayanan[i][j] = 0;
-        // }
-        // }
-
         found = false;
-        listPelayanan = new String[WeekList.weekList.size()][InstrumentsList.instrumentsList.size()];
+        listPelayanan = new Member[WeekList.weekList.size()][InstrumentsList.instrumentsList.size()];
 
-        jadwalPelayanan(0);
+        dfs(0, 0);
 
+        System.out.println(count);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s%n", "Minggu", "Guitar", "Bass", "Drum", "Keyboard");
+        System.out.println("=".repeat(110));
         for (int i = 0; i < WeekList.weekList.size(); i++) {
+            System.out.printf("| %-20s ", WeekList.weekList.get(i).getWeekName());
             for (int j = 0; j < InstrumentsList.instrumentsList.size(); j++) {
-                System.out.print(listPelayanan[i][j] + " ");
+                System.out.printf("| %-20s ", listPelayanan[i][j] == null ? "-" : listPelayanan[i][j].getMemberName());
             }
             System.out.println();
         }
