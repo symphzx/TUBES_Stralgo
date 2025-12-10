@@ -1,4 +1,4 @@
-package tubes;
+package TUBES_Stralgo.app.src.main.java.tubes;
 
 public class Instrument {
     private String instrumentName;
