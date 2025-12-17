@@ -5,14 +5,16 @@ import java.util.List;
 
 public class WeekList {
     public static List<Week> weekList = new ArrayList<>();
+    static int weekAmount = 1;
 
     static {
         for(int i = 1; i <= 4; i++) {
-            weekList.add(new Week(i));
+            addWeek();
         }
     }
 
-    public void addWeek(Week week) {
-        weekList.add(week);
+    public static void addWeek() {
+        weekList.add(new Week(weekAmount));
+        weekAmount++;
     }
 }

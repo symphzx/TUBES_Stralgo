@@ -12,6 +12,20 @@ public class Member {
         this.memberName = memberName;
     }
 
+    public String toString() {
+        String result = memberName + ": (";
+        for(Instrument instrument : instrumentSpeciality) {
+            result += instrument.getInstrumentName() + ", ";
+        }
+        result +=")";
+        result += " | ";
+        for(Week week : availableWeeks) {
+            result += week.getWeekName() + ", ";
+        }
+        result += ")";
+        return result;
+    }
+
     public String getMemberName() {
         return memberName;
     }
