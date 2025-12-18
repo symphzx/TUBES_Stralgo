@@ -17,6 +17,186 @@ public class DFS {
         listPelayanan = new Member[WeekList.weekList.size()][InstrumentsList.instrumentsList.size()];
     }
 
+    public static void testCase1() {
+        WeekList.weekList = new ArrayList<>();
+        WeekList.weekAmount = 1;
+        //4 minggu
+        WeekList.addWeek();
+        WeekList.addWeek();
+        WeekList.addWeek();
+        WeekList.addWeek();
+
+        Ministry.members = new ArrayList<>();
+
+        Member A = new Member("A");
+        A.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(0)); // Gitar
+        A.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(1)); // Bass
+        A.addAvailableWeek(WeekList.weekList.get(2)); // Week 3
+        A.addAvailableWeek(WeekList.weekList.get(3)); // Week 4
+        Ministry.addMember(A);
+
+        Member B = new Member("B");
+        B.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(0)); // Gitar
+        B.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(1)); // Bass
+        B.addAvailableWeek(WeekList.weekList.get(2)); // Week 3
+        B.addAvailableWeek(WeekList.weekList.get(3)); // Week 4
+        Ministry.addMember(B);
+
+        Member C = new Member("C");
+        C.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(3)); // Keyboard
+        C.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        C.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        Ministry.addMember(C);
+
+        Member D = new Member("D");
+        D.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(3)); // Keyboard
+        D.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        D.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        D.addAvailableWeek(WeekList.weekList.get(2)); // Week 2
+        D.addAvailableWeek(WeekList.weekList.get(3)); // Week 4
+        Ministry.addMember(D);
+
+        Member E = new Member("E");
+        E.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(2)); // Drum
+        E.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        E.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        E.addAvailableWeek(WeekList.weekList.get(2)); // Week 2
+        E.addAvailableWeek(WeekList.weekList.get(3)); // Week 4
+        Ministry.addMember(E);
+
+        Member F = new Member("F");
+        F.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(2)); // Drum
+        F.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        F.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        F.addAvailableWeek(WeekList.weekList.get(2)); // Week 2
+        F.addAvailableWeek(WeekList.weekList.get(3)); // Week 4
+        Ministry.addMember(F);
+
+        Member G = new Member("G");
+        G.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(0)); // Guitar
+        G.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        G.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        G.addAvailableWeek(WeekList.weekList.get(2)); // Week 2
+        G.addAvailableWeek(WeekList.weekList.get(3)); // Week 4
+        Ministry.addMember(G);
+
+        Member H = new Member("H");
+        H.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(1)); // Bass
+        H.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        H.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        H.addAvailableWeek(WeekList.weekList.get(2)); // Week 2
+        H.addAvailableWeek(WeekList.weekList.get(3)); // Week 4
+        Ministry.addMember(H);
+
+        Member I = new Member("I");
+        I.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(1)); // Bass
+        I.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        I.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        I.addAvailableWeek(WeekList.weekList.get(2)); // Week 2
+        I.addAvailableWeek(WeekList.weekList.get(3)); // Week 4
+        Ministry.addMember(I);
+    }
+
+    public static void testCase2() {
+        WeekList.weekList = new ArrayList<>();
+        WeekList.weekAmount = 1;
+        //2 minggu
+        WeekList.addWeek();
+        WeekList.addWeek();
+
+        Ministry.members = new ArrayList<>();
+
+        Member A = new Member("A");
+        A.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(0)); // Gitar
+        A.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        Ministry.addMember(A);
+
+        Member B = new Member("B");
+        B.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(1)); // Bass
+        B.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        Ministry.addMember(B);
+
+        Member C = new Member("C");
+        C.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(3)); // Keyboard
+        C.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        Ministry.addMember(C);
+
+        Member D = new Member("D");
+        D.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(2)); // drum
+        D.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        Ministry.addMember(D);
+
+        Member E = new Member("E");
+        E.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(0)); // Drum
+        E.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        Ministry.addMember(E);
+
+        Member F = new Member("F");
+        F.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(1)); // Bass
+        F.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        Ministry.addMember(F);
+
+        Member G = new Member("G");
+        G.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(3)); // Keyboard
+        G.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        Ministry.addMember(G);
+
+        Member H = new Member("H");
+        H.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(2)); // Drum
+        H.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        Ministry.addMember(H);
+    }
+
+    public static void defaultCase() {
+        Member A = new Member("A");
+        A.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(0)); // Gitar
+        A.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(1)); // Bass
+        A.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        A.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        Ministry.addMember(A);
+
+        Member B = new Member("B");
+        B.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(2)); // Drum
+        B.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        B.addAvailableWeek(WeekList.weekList.get(2)); // Week 3
+        B.addAvailableWeek(WeekList.weekList.get(3)); // Week 4
+        Ministry.addMember(B);
+
+        Member C = new Member("C");
+        C.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(3)); // Keyboard
+        C.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        C.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        C.addAvailableWeek(WeekList.weekList.get(3)); // Week 4
+        Ministry.addMember(C);
+
+        Member D = new Member("D");
+        D.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(0)); // Gitar
+        D.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        D.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        D.addAvailableWeek(WeekList.weekList.get(3)); // Week 4
+        Ministry.addMember(D);
+
+        Member E = new Member("E");
+        E.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(1)); // Bass
+        E.addAvailableWeek(WeekList.weekList.get(0)); // Week 1
+        E.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        E.addAvailableWeek(WeekList.weekList.get(3)); // Week 4
+        Ministry.addMember(E);
+
+        Member F = new Member("F");
+        F.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(2)); // Drum
+        F.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(3)); // Keyboard
+        F.addAvailableWeek(WeekList.weekList.get(1)); // Week 2
+        F.addAvailableWeek(WeekList.weekList.get(2)); // Week 3
+        Ministry.addMember(F);
+
+        Member G = new Member("G");
+        G.addInstrumentSpeciality(InstrumentsList.instrumentsList.get(0)); // Gitar
+        G.addAvailableWeek(WeekList.weekList.get(2)); // Week 3
+        G.addAvailableWeek(WeekList.weekList.get(3)); // Week 4
+        Ministry.addMember(G);
+    }
+
     public static void dfs(int minggu, int instrumen) {
         if (instrumen == InstrumentsList.instrumentsList.size()) {
             if (!solusionExist()) {
@@ -83,6 +263,8 @@ public class DFS {
     public static void main(String[] args) {
         found = false;
         listPelayanan = new Member[WeekList.weekList.size()][InstrumentsList.instrumentsList.size()];
+
+        testCase2();
 
         int menu = 0;
         do {
